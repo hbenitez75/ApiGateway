@@ -1,6 +1,6 @@
 using System;
 
-namespace BillableTransaction
+namespace ApiBillableTransaction
 {
     public class WeatherForecast
     {

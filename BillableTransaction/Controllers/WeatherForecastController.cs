@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BillableTransaction.Controllers
+namespace ApiBillableTransaction.Controllers
 {
     [ApiController]
     [Route("[controller]")]

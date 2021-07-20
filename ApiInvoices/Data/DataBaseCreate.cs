@@ -33,20 +33,20 @@ namespace ApiInvoices.Data
 
             // The table below wont be necessary it we had use rabbitmq..
                         
-                var table = connection.Query<string>("SELECT name FROM sqlite_master WHERE type='table' AND name = 'BillTransaction';");
+                var table = connection.Query<string>("SELECT name FROM sqlite_master WHERE type='table' AND name = 'Movements';");
                 var tableName = table.FirstOrDefault();
-                if (!string.IsNullOrEmpty(tableName) && tableName == "BillTransaction")
+                if (!string.IsNullOrEmpty(tableName) && tableName == "Movements")
                     return;
-                
-                connection.Execute("Create Table BillTransaction (" +
-                    "CreateDate      DATE, " +
-                    "TransactionDate DATE, " +
-                    "BilledDate      DATE, " +
-                    "PaidDate        DATE, " +
-                    "Amount          NUMERIC, " +
-                    "Status          NUMERIC, " +
-                    "InvoiceNumber   VARCHAR(100);"); 
-            
+
+            connection.Execute("Create Table Movements (" +
+            "Description     VARCHAR(100), " +
+            "BillDate        DATE, " +
+            "Amount          NUMERIC, " +
+            "Status          INT, " +
+            "TransactionDate DATE, " +
+            "InvoiceNumber   VARCHAR(100));");
+
+
         }
     }
 }

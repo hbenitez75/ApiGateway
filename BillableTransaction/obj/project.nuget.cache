@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8ZYss0AVsSIFYebLJsUndL0U9eYhMXzl7MaijQcOVor0C0wK+PIrCdZThu9R0KxcaZOabfpeCBbRU6O1HxKA5g==",
+  "dgSpecHash": "x+lpJ9bRy6b3KaimgFEDCZpebRbwRWHXjP1J7ZE6gEXVikjE3kZjXy+7MWbHj1ANj7JmdjHpl5h9395xUYzXVA==",
   "success": true,
   "projectFilePath": "C:\\Users\\hbeni\\source\\repos\\ApiGateway\\BillableTransaction\\ApiBillableTransaction.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "C:\\Users\\hbeni\\.nuget\\packages\\microsoft.data.sqlite\\5.0.8\\microsoft.data.sqlite.5.0.8.nupkg.sha512",
     "C:\\Users\\hbeni\\.nuget\\packages\\microsoft.data.sqlite.core\\5.0.8\\microsoft.data.sqlite.core.5.0.8.nupkg.sha512",
     "C:\\Users\\hbeni\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\hbeni\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.2\\microsoft.extensions.dependencyinjection.5.0.2.nupkg.sha512",
+    "C:\\Users\\hbeni\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\hbeni\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\hbeni\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.4\\sqlitepclraw.bundle_e_sqlite3.2.0.4.nupkg.sha512",
     "C:\\Users\\hbeni\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",

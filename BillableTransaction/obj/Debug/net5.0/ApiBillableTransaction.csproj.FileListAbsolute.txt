@@ -9,6 +9,7 @@ C:\Users\hbeni\source\repos\ApiGateway\BillableTransaction\bin\Debug\net5.0\ref\
 C:\Users\hbeni\source\repos\ApiGateway\BillableTransaction\bin\Debug\net5.0\ApiBillableTransaction.pdb
 C:\Users\hbeni\source\repos\ApiGateway\BillableTransaction\bin\Debug\net5.0\Dapper.dll
 C:\Users\hbeni\source\repos\ApiGateway\BillableTransaction\bin\Debug\net5.0\Microsoft.Data.Sqlite.dll
+C:\Users\hbeni\source\repos\ApiGateway\BillableTransaction\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\hbeni\source\repos\ApiGateway\BillableTransaction\bin\Debug\net5.0\Microsoft.OpenApi.dll
 C:\Users\hbeni\source\repos\ApiGateway\BillableTransaction\bin\Debug\net5.0\SQLitePCLRaw.batteries_v2.dll
 C:\Users\hbeni\source\repos\ApiGateway\BillableTransaction\bin\Debug\net5.0\SQLitePCLRaw.nativelibrary.dll

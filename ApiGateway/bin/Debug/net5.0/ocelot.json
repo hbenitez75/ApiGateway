@@ -1,0 +1,41 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/{everything}",
+      "UpstreamPathTemplate": "/api/Invoice/{everything}",
+      "ServiceName": "ApiInvoices",
+      "SwaggerKey": "ApiInvoices"
+    },
+    {
+      "DownstreamPathTemplate": "/api/{everything}",
+      "UpstreamPathTemplate": "/api/Transaction/{everything}",
+      "ServiceName": "ApiBillableTransaction",
+      "SwaggerKey": "ApiBillableTransaction"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "Invoices",
+      "Config": [
+        {
+          "Name": "ApiInvoices v1",
+          "Version": "v1",
+          "Url": "https://localhost:44351/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "ApiBillableTransaction",
+      "Config": [
+        {
+          "Name": "ApiBillableTransaction API",
+          "Version": "v1",
+          "Url": "https://localhost:44383/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost"
+  }
+}

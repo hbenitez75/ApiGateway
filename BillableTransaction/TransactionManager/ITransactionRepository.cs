@@ -7,11 +7,11 @@ namespace ApiBillableTransaction.TransactionManager
 {
     public interface ITransactionRepository
     {
-        Task Create(Transaction transaction);
-        Task<IEnumerable<Transaction>> GetAll();
+        Task Create(Movements transaction);
+        Task<IEnumerable<Movements>> GetAll();
         // In a CQRS patter the update commandl would be in a 
         // different repository 
-        Task Update(Transaction transaction);
+        Task Update(Movements transaction);
 
     }
 }

@@ -46,4 +46,3 @@ C:\Users\hbeni\source\repos\ApiGateway\ApiInvoices\obj\Debug\net5.0\ApiInvoices.
 C:\Users\hbeni\source\repos\ApiGateway\ApiInvoices\obj\Debug\net5.0\ref\ApiInvoices.dll
 C:\Users\hbeni\source\repos\ApiGateway\ApiInvoices\obj\Debug\net5.0\ApiInvoices.pdb
 C:\Users\hbeni\source\repos\ApiGateway\ApiInvoices\obj\Debug\net5.0\ApiInvoices.genruntimeconfig.cache
-C:\Users\hbeni\source\repos\ApiGateway\ApiInvoices\obj\Debug\net5.0\ApiInvoices.csproj.AssemblyReference.cache

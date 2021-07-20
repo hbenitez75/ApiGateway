@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ApiBillableTransaction.TransactionManager;
 
+
 namespace ApiBillableTransaction.Controllers
 {
     [Route("api/[controller]")]
@@ -20,19 +21,19 @@ namespace ApiBillableTransaction.Controllers
         }
 
         [HttpPost]
-        public async Task Post([FromBody] Transaction transaction)
+        public async Task Post([FromBody] Movements transaction)
         {
             await transactionRepository.Create(transaction);
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Transaction>> Get()
+        public async Task<IEnumerable<Movements>> Get()
         {
             return await transactionRepository.GetAll();
         }
 
         [HttpPut]
-        public async Task Put([FromBody] Transaction transaction)
+        public async Task Put([FromBody] Movements transaction)
         {
             await transactionRepository.Update(transaction);
         }

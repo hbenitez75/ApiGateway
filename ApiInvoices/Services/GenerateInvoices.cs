@@ -24,11 +24,11 @@ namespace ApiInvoices.Services
             var connection = new SqliteConnection(dataBaseName.Name);
             var status = TransactionStatus.Billed;
             string guid = Guid.NewGuid().ToString("D");
-            var queryBill = @"UPDATE  BillTransaction SET status =@status, " +
+            var queryBill = @"UPDATE  Movements SET status =@status, " +
                 "InvoiceNumber = @guid "+
-                " WHERE TransactionDate BETWEEN @_from AND @_to;";
+                " WHERE BillDate BETWEEN @_from AND @_to;";
             await connection.ExecuteAsync(queryBill);
-            var invoices = connection.QueryAsync<Invoice>("SELECT 1,'My Invoice',DATE('now'),Date(now,'-1 MONTHS'),SUM(Amount),0 FROM BillTransaction GROUP BY InvoiceNumber ;");
+            var invoices = connection.QueryAsync<Invoice>("SELECT 1,'My Invoice',DATE('now'),Date(now,'-1 MONTHS'),SUM(Amount),0 FROM Movements GROUP BY InvoiceNumber ;");
 
             Invoice invoice= invoices.Result.SingleOrDefault(x => x.InvoiceNumber == guid);
 

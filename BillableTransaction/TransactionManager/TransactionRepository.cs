@@ -15,27 +15,32 @@ namespace ApiBillableTransaction.TransactionManager
             dataBaseName = _dataBaseName;
         }
 
-        public async Task Create(Transaction transaction)
+        public async Task Create(Movements transaction)
         {
             using var connection = new SqliteConnection(dataBaseName.Name);
-            await connection.ExecuteAsync("INSERT INTO BillTransaction(CreateDate,Description,TransactionDate, BilledDate,PaidDate,Amount,Status,InvoiceNumber) VALUES(@CreateDate,@Description,@TransactionDate, @BilledDate,@PaidDate,@Amount,@status,@InvoiceNumber);", transaction);
-            //                "VALUES(@CreateDate,@Description,@TransactionDate, @BilledDate,@PaidDate,@Amount,@status,@InvoiceNumber);", transaction);
+            await connection.ExecuteAsync("INSERT INTO Movements(Description,BillDate,Amount,Status,TransactionDate,InvoiceNumber) " +
+             "VALUES(@Description, @BillDate, @Amount, @Status, @TransactionDate, @InvoiceNumber);", transaction);
+
+            // FOR SOME REASON DE QUERY BELOW NEVER WORKED SO I CHANGED THE TABLE NAME 
+            //await connection.ExecuteAsync("INSERT INTO BillTransaction(CreateDate,Description,TransactionDate, BilledDate,PaidDate,Amount,Status,InvoiceNumber) "+
+            //"VALUES(@CreateDate,@Description,@TransactionDate, @BilledDate,@PaidDate,@Amount,@status,@InvoiceNumber);", transaction);
+
 
 
         }
 
-        public async Task<IEnumerable<Transaction>> GetAll()
+        public async Task<IEnumerable<Movements>> GetAll()
         {
             using var connection = new SqliteConnection(dataBaseName.Name);
-            return await connection.QueryAsync<Transaction>("SELECT rowid as Id,CreateDate,TransactionDate," +
-                "Description,Amount,Status FROM BillTransaction;");
+            return await connection.QueryAsync<Movements>("SELECT rowid as Id,Description,BillDate," +
+                "Amount,Status,TransactionDate,InvoiceNumber FROM Movements;");
         }
 
-        public async Task Update(Transaction transaction)
+        public async Task Update(Movements transaction)
         {
             using var connection = new SqliteConnection(dataBaseName.Name);
             var id = transaction.Id;
-            var queryBill = @"UPDATE  BillTransaction SET status =@status" +
+            var queryBill = @"UPDATE  Movements SET status =@status" +
                 " WHERE rowId = @id";
             //We set as billable the queryable records and the we recover those
             await connection.ExecuteAsync(queryBill);
