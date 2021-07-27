@@ -41,7 +41,7 @@ namespace ApiGateway
             });
             services.AddSwaggerForOcelot(Configuration);
             
-
+            /*
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
          .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme,
         options =>
@@ -49,6 +49,7 @@ namespace ApiGateway
             options.LoginPath = new PathString("/auth/login");
             options.AccessDeniedPath = new PathString("/auth/denied");
         });
+            */
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,7 +60,7 @@ namespace ApiGateway
                
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiInvoices v1"));
+              //  app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiGateway v1"));
 
             }
 
@@ -68,12 +69,20 @@ namespace ApiGateway
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
-            app.UseSwaggerForOcelotUI();
+            //app.UseSwaggerForOcelotUI();
+
+            app.UseSwaggerForOcelotUI(opt =>
+            {
+                opt.PathToSwaggerGenerator = "/swagger/docs";
+            })
+            .UseOcelot()
+            .Wait();
         }
     }
 }
