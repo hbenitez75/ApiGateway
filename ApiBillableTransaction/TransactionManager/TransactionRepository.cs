@@ -39,11 +39,12 @@ namespace ApiBillableTransaction.TransactionManager
         public async Task Update(Movements transaction)
         {
             using var connection = new SqliteConnection(dataBaseName.Name);
+            var status = transaction.Status;
             var id = transaction.Id;
-            var queryBill = @"UPDATE  Movements SET status =@status" +
-                " WHERE rowId = @id";
+            var queryBill = @"UPDATE  Movements SET Status =@Status" +
+                " WHERE rowid = @Id";
             //We set as billable the queryable records and the we recover those
-            await connection.ExecuteAsync(queryBill);
+            await connection.ExecuteAsync(queryBill,transaction);
         }
 
     }
